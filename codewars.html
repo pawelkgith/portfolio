@@ -1,0 +1,1876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeWars</title>
+</head>
+<body>
+    <script>
+        /*
+        function narcissistic(value) 
+        {
+            var begg;
+            begg = value;
+            let len = 0;
+            let sum = 0;
+            let counter = 0;
+            var h;
+
+            value = value.toString();
+            len = value.length;
+
+            for(let i=0; i<len; i++)
+            {
+                h = value[i];
+                h.parseInt;
+
+                sum += Math.pow(h, len);
+
+                h.toString();
+            }
+
+            begg = begg.toString();
+            sum = sum.toString();
+
+            for(let i = 0; i<len; i++)
+            {
+                if(begg[i] == sum[i])
+                    counter++;
+                else
+                    continue;
+            }
+
+            if(counter == len)
+                return true;
+
+            else
+                return false;
+        }   
+
+        var i = 153;
+        if(!narcissistic(i))
+            console.log("false");
+        else
+            console.log("true");
+        */
+
+        /*
+        var countBits = function(n) {
+             n = n.toString(2);
+            let counter = 0;
+            
+            for(let i=0; i<=n.length; i++)
+            {
+                if(n[i]==1)
+                {
+                    counter++;
+                }
+            }
+            console.log(counter);
+            return counter;
+        };
+        */
+
+        /*
+        var isSquare = function(n){
+            if(n == 0)
+            {
+                return true;
+            }
+
+            if(Number.isInteger(Math.sqrt(n)) == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        */
+
+        /*
+        function sumTwoSmallestNumbers(numbers) {
+            let fminimum = 0;
+            let sminimum = 0;
+            let h = 0;
+            let sum = 0;
+            
+            fminimum = Math.min.apply(Math, numbers);
+            h = numbers.indexOf(fminimum);
+            numbers.splice(h, 1);
+            sminimum = Math.min.apply(Math, numbers);
+
+            sum = fminimum + sminimum;
+            return sum;
+        }
+        
+        //var nums = [1, 2, 3]
+        //abc = Math.min.apply(Math, nums)    
+        //console.log(abc);
+        
+
+        var numbs = [8, 6, 24, 48];
+        sumTwoSmallestNumbers(numbs);
+    */
+    
+    /*
+        function isTriangle(a,b,c)
+        {
+            return a + b > c && a + c > b && b + c > a;
+        }
+    */
+
+        /*
+        function narcissistic(value) 
+        {
+            let sum = 0;
+            let s = value.toString().length;
+            for(let i=0; i<s; i++)
+            {
+                sum += Math.pow(value.toString()[i],s);
+            }
+
+            if(sum == value)
+                return true;
+            else
+                return false;
+        }
+        */
+
+        /*
+        function divisors(integer) 
+        {
+            let sub = [];
+
+            for(let i=2; i<integer; i++)
+            {
+                if(integer % i == 0)
+                {
+                    sub.push(i);
+                }
+            }
+
+            if(sub.length==0)
+            {
+                return  `${integer} is prime`;
+            }
+            
+            else
+                return sub;
+        }
+        */
+        
+        /*
+        function digital_root(n)
+        {
+            let result = 0;
+            String(n).split('').map(num => 
+            {
+                result += Number(num);
+            });
+
+            return n > 10 ? digital_root(result) : result;
+        }
+        */
+
+        /*
+        function incrementString (strng) 
+        {
+            
+            strng = strng.split('');
+            const length = strng.length;
+            strng.map(function() { 
+                return Number.isInteger(strng[length-1]) ? strng.push(strng[length-1]+1) : strng.push("1");
+            });
+            return strng;       
+        }
+        */
+
+        /*
+        function incrementString(strng)
+        {
+            strng = strng.toString();
+            strng = strng.split('');
+            let len = strng.length;
+            //console.log(strng[len - 1]);
+            //console.log(Number.isInteger(strng[len - 1]));
+
+            if(Number.isInteger(strng[len - 1]))
+                strng.push(strng[len-1] + 1);
+
+            else
+                strng.push("1");
+
+            strng = strng.join('');
+            return strng;
+        }
+        console.log(incrementString("xd"));
+
+        let arr = ["xd"];
+        arr = arr.toString();
+        arr =arr.split('');
+        arr.push("1");
+        arr = arr.join('');
+        console.log(arr);
+        */
+        
+        /*
+        function persistence(num) 
+        {
+            return `${num}`.length > 1 ? 1 + persistence(`${num}`.split('').reduce((a,b) => a*b)) : 0;
+        }
+        */
+
+        /*
+        function toCamelCase(str)
+        {
+            str.toString();
+            str = str.split('');
+
+            for(let i=0; i < str.length; i++)
+            {
+                if(str[i] == "-" || str[i] == "_")
+                {
+                    str[i+1] = str[i+1].toUpperCase();
+                    str.splice(i, 1);
+                }
+            }
+
+            str = str.join('');
+            return str;
+        }
+        */
+
+        /*
+        function spinWords(str)
+        {
+            return str.split(' ').map(function(word) {
+                return (word.length > 4) ? word.split('').reverse().join('') : word;
+            }).join(' ');
+        }
+        */
+
+        /*
+        function maskify(cc) 
+        {
+            cc = cc.split('');
+            let st = cc[cc.length-1];
+            let nd = cc[cc.length-2];
+            let rd = cc[cc.length-3];
+            let th = cc[cc.length-4];
+
+            if(cc.length > 4)
+            {
+                cc = cc.reverse();
+                cc = cc.splice(4, 6);
+                cc = cc.reverse();
+                
+                cc = cc.splice(0, cc.length-4);
+
+                for(let i=0; i<cc.length; i++)
+                {
+                    cc[i] = "#";
+                }
+
+                cc.push(th, rd, nd, st);
+                cc = cc.join('');
+                return cc;
+            }
+
+            else
+            {
+                cc = cc.join('');
+                return cc;
+            }
+        }
+        */
+        
+        /*
+        function domainName(url)
+        {
+            url = url.replace("http://", "");
+            url = url.replace("https://", "");
+            url = url.replace("www.", "");
+
+            return url.split(".")[0];
+        }
+        */
+
+        /*
+        function toWeirdCase(string)
+        {
+            return string.split(' ').map((v,i)=>v.split('').map((v,i)=>i%2===0?v.toUpperCase():v.toLowerCase()).join('')).join(' ');   
+        }
+        */
+
+        /*
+        function isPrime(num) 
+        {
+            if(num < 2)
+                return false;
+
+            let a = 0;
+            for(let i=2; i<num; i++)
+            {
+                if(num%i==0)
+                    a++;
+            }
+
+            if(a==0)
+                return true;
+            else
+                return false;
+        }
+        */
+
+        /*
+        function solution(number)
+        {
+            var result = '';
+            var roman = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
+            var decimals = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+
+            decimals.map(function(value, index) {
+                while(number >= value) {
+                    result += roman[index];
+                    number-=value;
+                }
+            });
+            return result;
+        }
+        */
+
+        /*
+        function findUniq(arr) 
+        {
+            let num = 0;
+
+            if(arr[0] === arr[1])
+                num = arr[0];
+            
+            else
+            {
+                if(arr[0] != arr[2])
+                    return arr[0];
+
+                else if(arr[1] != arr[2])
+                    return arr[1];
+            }
+
+            for(let i=0; i<arr.length; i++)
+            {
+                if(arr[i] != num)
+                    return arr[i];
+            }
+        }
+        */
+
+        /*
+        function findUniq(arr)
+        {
+            arr = arr.sort();
+            return arr[0] === arr[1] ? arr[arr.length-1] : arr[0];
+        }
+        */
+
+        /*
+        function solution (roman) 
+        {
+            const romanMap = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000};
+            let sum = 0;
+            for(let i=0; i<roman.length; i++)
+            {
+                const current = romanMap[roman[i]];
+                const next = romanMap[roman[i+1]];
+
+                if(next === undefined)
+                {
+                    sum += current;
+                    continue;
+                }
+
+                if(current >= next)
+                {
+                    sum += current;
+                    continue;
+                }
+
+                sum -= current;
+            }
+            return sum;
+        }
+        */
+
+        /*
+        function remove (str) 
+        {
+            str = str.toString();
+            str = str.split('');
+            return str[str.length-1] === "!" ? str.splice(0, str.length-1).join('') : str.join('');
+        }
+        */
+
+        /*
+        function removeExclamationMarks(s) 
+        {
+            s = s.toString().split('');
+            return s.filter(function(a){if(a!="!")return a;}).join('');
+        }
+        */
+
+        /* function reverseWords(str)
+        {
+            str = str.toString().split(' ').reverse().join(' ');
+            return str;
+        } 
+        */ 
+
+        /*
+        function generateHashtag (str) 
+        {
+            if(str.trim() === '')
+                return false;
+            
+            let woutfstletter = str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('');
+            let whash = `#${woutfstletter.trim()}`;
+
+            return whash.length > 140 ? false : whash;
+        }
+        */
+
+        /*
+        function solution(number)
+        {
+            if(number < 0)
+                return 0;
+
+            let once = [];
+            let both = [];
+
+            for(let i=1; i<number; i++)
+            {
+                if(i % 3 == 0 && i % 5 == 0)
+                    both.push(`${i}`);
+
+                else if(i % 3 == 0 || i % 5 == 0)
+                    once.push(`${i}`);
+            }
+
+            let res = once.concat(both);
+            res.sort(function(a,b){return a-b});
+            if(res.length === 0)
+                return 0;
+            let sum = res.reduce((a, b) => parseInt(a)+parseInt(b), 0);
+            return sum;
+        }
+        */
+
+        /*
+        function anagrams(word, words) {
+            word = word.split('').sort().join('');
+            return words.filter(v => word == v.split('').sort().join(''));
+        }
+        */
+        
+        /*
+        function oddCount(n){
+            let a = [];
+            for(let i = 1; i < n; i++)
+            {
+                if(i%2==1)
+                    a.push(i);
+            }
+            //return a.reduce((a,b) => a+b);
+            return a.length;
+        }
+        */
+
+        /* function formatDuration(seconds)
+        {
+            if(seconds === 0)
+                return 'now';
+            let years = 0, days = 0, hours = 0, minutes = 0;
+            var typeArr = ['year','day','hour','minute','second'];
+            minutes = Math.floor(seconds/60);
+            seconds -= (minutes * 60);
+
+            hours = Math.floor(minutes/60)
+            minutes -= (hours * 60);
+
+
+            days = Math.floor(hours/24);
+            hours -= (days * 24);
+
+            years = Math.floor(days/365);
+            days -= (years * 365);
+            
+            var resultArr = [years,days,hours,minutes,seconds];
+            var resultStrArr = [] ;
+            for (let i = 0;i<resultArr.length;i++){
+                if (resultArr[i]===1)
+                    resultStrArr.push(resultArr[i]+' '+typeArr[i]);
+
+                else if (resultArr[i]>=2)
+                    resultStrArr.push(resultArr[i]+' '+typeArr[i]+'s');
+                
+            }
+
+            var resultStr = '';
+            for (let i=0; i<resultStrArr.length;i++)
+            {
+                if(i===resultStrArr.length-2)
+                {
+                    resultStr+=resultStrArr[i]+' and '+resultStrArr[i+1];
+                    break;
+                }
+
+                if(i!==resultStrArr.length-1)
+                    resultStr+=resultStrArr[i] + ', ';
+
+                else 
+                    resultStr += resultStrArr[i];
+            }
+        return resultStr;
+        } 
+        */
+
+        /*
+        function sumPairs(ints, s) 
+        {
+            let b = false;
+            let num1 = 0;
+            let num2 = 0;
+
+            for(let i=0; i < ints.length; i++)
+            {
+                if(b == true)
+                    break;
+                
+                for(let j = 0; j < ints.length; j++)
+                {
+                    if(ints[j] + ints[i] === s)
+                    {
+                        num1 = ints[i];
+                        num2 = ints[j];
+                        b = true;
+                    }
+                }
+            }
+
+            if(num1 === 0 || num2 === 0)
+                return undefined;
+
+            return [num1, num2];
+        }
+        */
+
+        /*
+        function disemvowel(str) 
+        {
+            let vowels = ["a", "e", "i", "o", "u"];
+            return str.split('').filter(a => vowels.indexOf(a.toLowerCase()) == -1).join('');
+        }
+        */
+
+        /*
+        function arrayDiff(a, b) 
+        {
+            //return a.filter(function(el){return el !== b[0] ? el : 0});
+            return a.filter(val => !b.includes(val));
+        }
+        */
+
+        /*
+        function squareDigits(num)
+        {
+            let res = [];
+            num = num.toString();
+            for(let i=0; i<num.length; i++)
+            {
+                res.push(Math.pow(num[i],2));
+            } 
+            res = res.join('');
+            res = parseInt(res);
+            return res;
+        }
+        */
+
+        /*
+        function findShort(str)
+        {
+            str = str.toString().split(" ");
+            let s = str[0].length;
+            for(let i=1; i<str.length; i++)
+            {
+                if(str[i].length < s)
+                    s = str[i].length;
+            }
+            return s;
+        }
+        */
+
+        /*
+        function noSpace(x)
+        {
+            x = x.toString().split('');
+            return x.filter(a => a !== " ").join('');
+        }
+        */
+
+        /*
+        function likes(names) 
+        {
+            if(names.length === 0)
+                return `no one likes this`;
+            else if(names.length == 1)
+                return `${names[0]} likes this`;
+            else if(names.length === 2)
+                return `${names[0]} and ${names[1]} like this`;
+            else if (names.length === 3)
+                return `${names[0]}, ${names[1]} and ${names[2]} like this`;
+            else if (names.length > 3)
+                return `${names[0]}, ${names[1]} and ${names.length-2} others like this`;   
+        }
+        */
+
+        /* 
+        function countPositivesSumNegatives(input) 
+        {
+            let count = [];
+            let sum = [];
+            let res = [];
+            let s = 0;
+            count = input.filter(function(el) {return el > 0}).length;
+            sum = input.filter(function(el) {return el < 0});
+            for(let i=0; i<sum.length; i++)
+            {
+                s += sum[i];
+            }
+            res.push(count, s);
+            return res;
+        } 
+        */
+
+        /*
+        function order(words)
+        {
+            return words.split(' ').sort(function(a,b) {return a.match(/\d/) - b.match(/\d/)}).join(' ');
+        }
+        */
+
+        /* 
+        function persistence(num)
+        {
+            let count = 0;
+            while(num.toString().length !== 1)
+            {
+                num = num.toString().split('').reduce((a, b) => a*b);
+                count++;
+            }
+            return count;
+        } 
+        */
+
+        /*
+        function generateHashtag (str)
+        {
+            if(str.trim() === '')
+                return false;
+
+            if(str.includes("#"))
+                str = str.replace(/#/g, '');
+
+            str = str.toString().trim().split(' ').map(el => {return el.charAt(0).toUpperCase() + el.slice(1).toLowerCase();}).join(' ').replace(/ /g, '');
+            str = `#${str}`;
+            return str.length > 140 ? false : str;
+        }
+        */
+
+        /* 
+        function maskify(cc)
+        {
+            if(cc.length <= 4)
+                return cc;
+            else
+            {
+                cc = cc.toString().split('');
+                let arr = [cc[cc.length-4], cc[cc.length-3], cc[cc.length-2], cc[cc.length-1]];
+                cc.splice(cc.length-4, 4);
+
+                cc = cc.join('').replace(/[A-Z]/gi, "#");
+                cc = cc.replace(/[0-9]/gi, "#");
+                cc = cc.concat(arr.join(''));
+                return cc;
+            }
+        } 
+        */
+
+        /* 
+        function toCamelCase(str)
+        {
+            if(str.length == 0)
+                return str;
+            let fst = str[0];
+            let a = "";
+            str = str.replace(/_/g, "-").split('-').map((v) => v.charAt(0).toUpperCase() + v.slice(1)).join('');
+            if(fst !== str.charAt(0).toUpperCase())    
+            {
+                str = str.split('');
+                str[0] = str[0].toLowerCase()
+                str = str.join('');
+            }
+            return str;
+        } 
+        */
+
+        /*
+        function toUnderscore(str) 
+        {
+            return str.trim().split(/(?=[A-Z])/).join('_').toLowerCase();
+        }
+        */
+
+        /*
+        function anagrams(word, words) {
+            word = word = word.toString().split('').sort().join('');
+            let res = [];
+            //words.filter(v => v.split('').sort().join(''));
+            for(let i=0; i<words.length; i++)
+            {
+                if(words[i].split('').sort().join('')===word) {
+                    res.push(words[i]);
+                }
+                
+            }
+            return res;
+        }
+        */
+
+        /*
+        function isIsogram(str) {
+        str = str.toLowerCase();
+            for(let i=0; i<str.length; i++)
+                for(let j=i+1; j<str.length; j++)
+                    if(str[i] === str[j])
+                        return false;
+            return true;
+        }
+        */
+
+        /* function validParentheses(parens) 
+        {
+            let o = [];
+            let c = [];
+
+            c = parens.replace(/[(]/g, "");
+            o = parens.replace(/[)]/g, "");
+            
+            return c.length===o.length;
+        }
+        */
+
+        /*
+        function narcissistic(value) 
+        {
+            let arr = value.toString().split('');
+            let sum = 0;
+            for(let i=0; i<arr.length; i++)
+            {
+                sum += Math.pow(arr[i], arr.length);
+            }
+            return sum;
+        }
+        console.log(narcissistic(1652));
+        */
+
+        /* 
+        String.prototype.toAlternatingCase=function() 
+        {
+            return this
+            .split("")
+            .map(
+                el => {
+                    return el.toUpperCase() === el 
+                    ? el.toLowerCase() 
+                    : el.toUpperCase()
+                })
+                .join('');
+        } 
+        */
+
+        /*
+        function isIsogram(str)
+        {
+            str = str.toUpperCase();
+            for(let i=0; i<str.length; i++) {
+                for(let j=i+1; j<str.length; j++) {
+                    if(str[i] === str[j]) return false;
+                    else continue;
+                }
+            }
+            return true;
+        }
+        */
+
+        /*
+        function narcissistic(value)
+        {
+            let nv = value.toString().split("");
+            let sum = 0;
+            nv = nv.map(el => {return Math.pow(el, nv.length)});
+            for(let i=0; i<nv.length; i++) {
+                sum += nv[i];
+            }
+            return value === sum ? true : false;
+        }
+        */
+        
+        /*
+        function findOutlier(integers) 
+        {
+            let oddArr = [];
+            let evArr = [];
+            for(let i=0; i<integers.length; i++) {
+                if(integers[i] % 2 === 0) evArr.push(integers[i]);
+                else oddArr.push(integers[i]);
+            }
+
+            return oddArr.length === 1 ? parseInt(oddArr.join('')) : parseInt(evArr.join(''));
+        }
+        */
+
+        /*
+        function createPhoneNumber(numbers)
+        {
+            return `(${numbers[0]}${numbers[1]}${numbers[2]}) ${numbers[3]}${numbers[4]}${numbers[5]}-${numbers[6]}${numbers[7]}${numbers[8]}${numbers[9]}`;
+        }
+        */
+
+        /*
+        function solution(string)
+        {
+            return string.toString().split(/(?=[A-Z])/g).join(' ');
+        }
+        */
+
+        /*
+        String.prototype.camelCase=function()
+        {
+            //return this.split(" ").map(el => el[0].toUpperCase() + el.slice(1)).join("");
+            return this.split(" ").map(el => el.charAt(0).toUpperCase() + el.slice(1)).join("");
+        }
+        */
+
+        /*
+        function partsSums(ls) 
+        {
+            let sum = [];
+            let part = 0;
+            for(let i=ls.length; i>-1; i--) {
+                for(let j=0; j<ls.length; j++) {
+                    part += ls[j];
+                }
+                sum.push(part);
+                ls.shift();
+                part = 0;
+            }
+            return sum;
+        }
+        */
+
+        /*
+        function toWeirdCase(string)
+        {
+            return string.split(' ').map((v) => v.split('').map((v,i) => i%2 === 0 ? v.toUpperCase() : v.toLowerCase()).join('')).join(' ');
+        }
+        */
+
+        /*
+        function longest(s1, s2)
+        {
+            s1 = s1.concat(s2);
+            s1 = s1.split('').filter((v, i, a) => a.indexOf(v) === i).join('');
+            return s1.split('').sort().join('');
+        }
+        */
+        
+        /*
+        function oddOrEven(array)
+        {
+            if(array.length === 0 )
+                return 'even';
+            let sum = 0;
+            sum = array.reduce((a,b) =>  a+b % 2);
+            return sum % 2 === 0 ? `even` : `odd`;
+        }
+        */
+
+        /*
+        function toCamelCase(str)
+        {
+            let q = 0;
+            if(str.charAt(0) === str.charAt(0).toLowerCase())
+                q = 1;
+            str = str.replace(/-/g, "_").split("_").map(el => el.charAt(0).toUpperCase() + el.slice(1)).join('');
+                
+            return q===1 ? str.charAt(0).toLowerCase() + str.slice(1) : str;
+        }
+        */
+
+        /*
+        var countBits = function(n) 
+        {
+            return n.toString(2).replace(/[0]/g, "").length;
+        }
+        */
+
+        /*
+        function solution(string)
+        {
+            return string.split(/(?=[A-Z])/).join(" ");
+        }
+        */
+
+        /*
+        function findOutlier(integers)
+        {
+            let oddArr = [];
+            let evenArr = [];
+
+            for(let i=0; i<integers.length; i++) {
+                if(integers[i] % 2 === 0)
+                    evenArr.push(integers[i]);
+                else
+                    oddArr.push(integers[i]);
+            }
+
+            return evenArr.length === 1 ? parseInt(evenArr) : parseInt(oddArr);
+        }
+        */
+
+        /*
+        function kebabize(str)
+        {
+            return str.replace(/[0-9]/g, "").split(/(?=[A-Z])/g).join("-").toLowerCase();
+        }
+        */
+
+        /*
+        function sumTwoSmallestNumbers(numbers)
+        {
+            return numbers.sort((a,b) => a-b).splice(0, 2).reduce((a,b) => a+b);
+        }
+        */
+
+        /*
+        function dontGiveMeFive(start, end)
+        {
+            let arr = [];
+            for(let i=start; i<=end; i++)
+            {
+                if(String(i).includes(5))
+                    continue;
+                arr.push(i);
+            }
+            return arr;
+        }
+        */
+
+        /* 
+        function oddOrEven(arr)
+        {
+            if(arr.length === 0)
+                return `even`;
+            return arr.reduce((a,b) => a+b)%2 === 0 ? `even` : `odd`;
+        } 
+        */
+
+        /*
+        function isNarcissistic(n)
+        {
+            n = n.toString().split('');
+            let arr = [];
+            arr = n.map(el => Math.pow(el, n.length)).reduce((a, b) => a+b);
+            n = n.join('');
+            arr = parseInt(arr);
+            return parseInt(arr) === parseInt(n) ? true : false;
+        }
+        */
+
+        /*
+        function getCount(str)
+        {
+            //return str.split("").map(el => el === "a" || el === "e" || el === "i" || el === "o" || el === "u" ? el : "").join('').length;
+            let len = str.length;
+            let len1 = str.replace(/[aeoiu]/gi, "").length;
+            return len - len1;
+        }
+        */
+
+        /*
+        function findOutlier(integers)
+        {
+            let odd = [];
+            let ev = [];
+
+            ev = integers.map(el => el % 2 === 0 ? el : "").filter(el => el);
+            odd = integers.map(el => el % 2 !== 0 ? el : "").filter(el => el);
+            return ev.length === 1 ? Number(ev.join('')) : Number(odd.join(''));
+        }
+        */
+
+        /*
+        String.prototype.CamelCase=function()
+        {
+            return this.toLowerCase().trim().split(' ').map((el, i) => el.charAt(0).toUpperCase() + el.slice(1)).join('');
+        }
+        */
+
+        /*
+        function order(words)
+        {
+            return words.split(' ').sort((a,b) => a.match(/\d/) - b.match(/\d/)).join(' ');
+        }
+        */
+
+        /*
+        function toWeirdCase(string)
+        {
+            return string.split(' ').map((el, i) => el.split('').map((el, i) => i%2 === 0 ? el.toUpperCase() : el.toLowerCase()).join('')).join(' ');
+        }
+        */
+
+        /*
+        var encryptThis = function(text)
+        {
+            text = text.split(' ').map((el, i) => el.split('').map((el, i) => i === 0 ? el.charCodeAt(0) : el).join('')).join(' ');
+            return text.split(/(?=[0-9])/g);
+        }
+        */
+
+        /*
+        function toWeirdCase(str)
+        {
+            return str.split(' ').map(el => el.split('').map((el,i) => i%2 === 0 ? el.toUpperCase() : el.toLowerCase()).join('')).join(' ');
+        }
+        */
+
+        /*
+        function wave(str)
+        {
+            let arr = [];
+            str = str.split('');
+            for(let i=0; i<str.length; i++) {
+                str[i] = str[i].toUpperCase();
+                arr.push(str.join(''));
+                str[i] = str[i].toLowerCase();
+            }
+
+            return arr.filter(el => el !== el.toLowerCase());
+        }
+        */
+        
+        /*
+        String.prototype.camelCase = function() 
+        {
+            return this.split(' ').map(el => el.split('').map((el, i) => i === 0 ? el.toUpperCase() : el.toLowerCase()).join('')).join('');
+        }
+        */
+
+        /*
+        function narcissistic(value)
+        {
+            let abc = value.toString().split('')
+            abc = abc.map(el => Math.pow(el, abc.length)).reduce((a,b) => a+b);
+            return Number(abc) === value;
+        }
+        */
+
+        /*
+        function digitalRoot(n)
+        {
+            n = n.toString().split('').map(el => parseInt(el));
+            
+            //return n.reduce((a,b) => a+b);
+            //return n.length-1;
+            while(n.length > 1) {
+                n = n.reduce((a, b) => a+b);
+                n = n.toString().split('').map(el => parseInt(el));
+            }
+            return Number(n);
+            //return n<10 ? n : digitalRoot(String(n).split('').reduce((a,b) => Number(a) + Number(b)));
+        }
+        */
+        
+        /*
+        function rot13(message)
+        {
+            const al = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLM';
+            return message.replace(/[a-z]/gi, letter => al[al.indexOf(letter) + 13]);
+        }
+        */
+
+        /*
+        const toUnderScore = str => 
+        {
+            //return str.trim().split(/(?=[A-Z])/).join('_').toLowerCase();
+            return str.replace(/\B([A-Z]|[0-9]+)/g, '_$1').replace(/__/g, "_");
+            
+        }
+        */
+
+        /*
+        function solution(str)
+        {
+            return str.split(/(?=[A-Z])/g).join(" ");
+        }
+        */
+
+        /*
+        function toUnderscore(str) 
+        {
+            return str.split(/(?=[A-Z])/g).map(el => el.toLowerCase()).join("_");
+        }
+        */
+
+        /*
+        function solution(number)
+        {
+            if(number <= 3)
+                return 0;
+            let sum = [];
+            for(let i=1; i<number; i++) {
+                if(i%3===0 || i%5===0)
+                    sum.push(i);
+            }
+            return sum.reduce((a,b) => a+b);
+        }
+        */
+
+        /*
+        String.prototype.toJadenCase = function ()
+        {
+            return this.split(" ").map(el => el.split("").map((el, i) => i === 0 ? el.toUpperCase() : el.toLowerCase()).join('')).join(' ');
+        }
+        */
+
+        /*
+        var encryptThis = function(text)
+        {
+            text = text
+            .split(' ')
+            .map(el => 
+            el.split('')
+            .map((el, i) => 
+            i === 0 
+            ? el.charCodeAt(0) 
+            : el).join(''))
+            .join(' ')
+            .split(/([0-9]+)/g)
+            .filter(a => 
+            a);
+            for(let i=0; i<text.length; i++) {
+                if(/[0-9]+/)
+                    continue;
+                else
+                    text.map(el => el.split('').map(el => el.reverse()));
+            }
+            return text.join('');
+        }
+        */
+
+        /*
+        function toCamelCase(str)
+        {
+            let h = 0;
+            if(str[0] === str[0].toUpperCase())
+                h = 1;
+            str = str.replace(/-/g, '_').split('_').map(el => el.split('').map((el, i) => i === 0 ? el.toUpperCase() : el.toLowerCase()).join(''));
+            return h === 1 ? str.join('') : str.map((el, i) => i === 0 ? el.toLowerCase() : el).join('');
+        }
+        */
+
+        /*
+        function squareDigits(num)
+        {
+            num = num.toString().split('').map(a => Math.pow(a,2)).join('');
+            return parseInt(num);
+        }
+        */
+
+        /*
+        function persistence(num)
+        {
+            let count = 0;
+            while(num.length !== 1) {
+                num = num.toString().split('').reduce((a,b) => a*b);
+                count++;
+            }
+            return count-1;
+        }
+        */
+
+        /*
+        function toCamelCase(str)
+        {
+            if(str.length === 0)
+                return '';
+            let u = 0;
+            if(str[0] === str[0].toUpperCase())
+                u = 1;
+            str = str.replace(/-/g, "_").split("_").map(el => el.split('').map((el, i) => i === 0 ? el.toUpperCase() : el.toLowerCase()).join('')).join('');
+            return u === 1 ? str : str.charAt(0).toLowerCase() + str.slice(1); 
+        }
+        */
+
+        /*
+        function digitalRoot(n)
+        {
+            n = n.toString().split('').map(el => parseInt(el));
+            while(n.length > 1) {
+                n = n.reduce((a,b) => a+b);
+                n = n.toString().split('').map(el => parseInt(el));
+            }
+            return Number(n.join(''));
+        }
+        */
+
+        /*
+        function spinWords(str)
+        {
+            return str.split(' ').map(word => word.length > 4 ? word.split('').reverse().join('') : word).join(' ');
+        }
+        */
+
+        /*
+        function solution(number) {
+            let res = [];
+            for(let i=3; i<number; i++) {
+                if(i%3 === 0 || i%5 === 0)
+                    res.push(i);
+            }
+            return number < 3 || res.length===0 ? 0 : res.reduce((a,b) => a+b); 
+        }
+        */
+
+        /* 
+        function generateHashtag(str)
+        {
+            return str.trim()
+            str = `#` + str.split(' ').map(el => el.split('').map((el,i) => i===0 ? el.toUpperCase() : el.toLowerCase()).join('')).join('');
+            return str.length > 140 ? false : str;
+        }
+        console.log(generateHashtag("   a    ")); 
+        */
+
+        /*
+        function solution(str)
+        {
+            return str.split((/(?=[A-Z])/g)).join(' ');
+        }
+        */
+
+        /*
+        function getCount(str)
+        {
+            return str.replace(/[^aeiou]/g, "").length;
+        }
+        */
+
+        /*
+        function humanReadable(seconds)
+        {
+            let hours=0, minutes=0;
+            minutes = Math.floor(seconds / 60);
+            seconds = seconds % 60;
+            hours = Math.floor(minutes / 60);
+            minutes = minutes % 60;
+            seconds = seconds.toString();
+            if(seconds < 10)
+                seconds = "0" + seconds;
+            minutes = minutes.toString();
+            if(minutes < 10)
+                minutes = "0" + minutes;
+            hours = hours.toString();
+            if(hours < 10)
+                hours = "0" + hours;
+
+            return `${hours}:${minutes}:${seconds}`;
+        }
+        */
+
+        /* 
+        var toUnderScore = str =>
+        {
+            return str.toString().split(/(?=[A-Z])/g).join('_').toLowerCase();
+        }
+        */
+
+        /*
+        var isSquare = function(n)
+        {
+            return Math.sqrt(n) === Math.floor(Math.sqrt(n)) ? true : false;
+        }
+        */
+
+        /*
+        const toUnderScore = name =>
+        {
+            //return name.split(/(\d+)|(?=[A-Z])/).filter(el => el).join("_").replace(/_+/g, "_");
+            return name.replace(/\B([A-Z]|[0-9]+)/g, '_$1').replace(/__/g, '_');
+        }
+        */
+
+        /*
+        function kebabize(str)
+        {
+            return str.replace(/[0-9]+/g, "").split(/(?=[A-Z])/g).join('-').toLowerCase();
+        }
+        */
+
+        /*
+        function getCount(str)
+        {
+            return str.replace(/[^aeiou]/gi, '').length;
+        }
+        */
+
+        /*
+        function accum(s)
+        {
+            let res = [];
+            for(let i=0; i<s.length; i++) {
+                for(let j=0; j<i+1; j++) {
+                    res.push(s[i]);
+                }
+                res.push(' ');
+            }
+            return res.join('').split(' ').filter(el => el).map(el => el.split('').map((el, i) => i===0 ? el.toUpperCase() : el.toLowerCase()).join('')).join('-');
+        }
+        */
+
+        /*
+        function findShort(s) 
+        {
+            s = s.split(' ').map(el => el.length);
+            return Math.min(...s);
+        }
+        */
+
+        /*
+        function order(words)
+        {
+            return words.split(' ').sort((a,b) => a.match(/\d/) - b.match(/\d/)).join(' ');
+        }
+        */
+
+        /*
+        function narcissistic(value)
+        {
+            value = String(value);
+            let eq = value.split('').map(el => Math.pow(el, value.length));
+            return eq.reduce((a,b) => a+b) === Number(value);
+        }
+        */
+
+        /*
+        function digitalRoot(n)
+        {
+            while(n.toString().length !== 1) {
+                n = String(n).split('').map(el => Number(el)).reduce((a,b) => a+b);
+            }
+            return n;
+        }
+        */
+
+        /*
+        function persistence(num)
+        {
+            //return String(num).split('').map(el => parseInt(el)).reduce((a,b) => a*b);
+            let i=0;
+            while(String(num).length !== 1)
+            {
+                num = String(num).split('').map(el => parseInt(el)).reduce((a,b) => a*b);
+                i++;
+            }
+            return i;
+        }
+        */
+
+        /*
+        function toUnderScore(str)
+        {
+            return str.toString().split(/(?=[A-Z])/g).join('_').toLowerCase();
+        }
+        */
+
+        /*
+        function incrementString(str)
+        {
+            str = str.split(/([A-Z]|[0-9]+)/).filter(el => el);
+            if(str.length === 1)
+                str.push("1");
+
+            else {
+                var a = str[0];
+                str.shift();
+                var zeros = 0;
+                str = str.join('');
+
+                for(let i=0; i<str.length; i++)
+                    if(str[i] === "0")
+                        zeros++;
+
+                if(str.length === zeros) {
+                    str = str.split('')
+                    str.pop();
+                    str.push("1");
+                    str = str.join('');
+                }
+
+                else {
+                    str = Number(str);
+                    str++;
+                    for(let i=0; i<zeros; i++) {
+                        str = String(str).split('');
+                        str.unshift("0");
+                        str = str.join('');
+                    }
+                }
+
+                str = str.split(/([A-Z]|[0-9]+)/).filter(el => el);
+                str.unshift(a);
+            }
+            return str.join('');
+        }
+        */
+
+        /*
+        function humanReadable (seconds)
+        {
+            let hours, minutes = 0;
+
+            hours = Math.floor(seconds/3600);
+            seconds -= hours*3600;
+
+            minutes = Math.floor(seconds/60);
+            seconds -= minutes*60; 
+
+            let arr = [hours, minutes, seconds];
+            arr = arr.map(el => el.toString());
+            for(let i=0; i<3; i++) {
+                arr[i] = arr[i].split('');
+                if(arr[i].length <= 1)
+                    arr[i].splice(0,-1, "0");
+                arr[i] = arr[i].join('');
+            }
+
+            return `${arr[0]}:${arr[1]}:${arr[2]}`;
+        }
+        */
+
+        /*
+        function rot13(message)
+        {
+            let s = "abcdefghijklmnopqrstuvwxyzabcdefghijklmABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMN";
+            return message.replace(/[a-z]/gi, letter => s[s.indexOf(letter)+13]);
+        }
+        */
+
+        /*
+        function removeParentheses(s)
+        {
+            return s.replace(/ *\([^)]*\) * /g, "");
+        }
+        */
+
+        /* 
+        class PaginationHelper {
+            constructor(collection, itemsPerPage) {
+                this.collection = collection;
+                this.itemsPerPage = itemsPerPage;
+            }
+
+            itemsCount() {
+                return this.collection.length;
+            }
+
+            pageCount() {
+                return Math.ceil(this.collection.length/this.itemsPerPage); 
+            }
+
+            pageItemCount(pageIndex) {
+                if(pageIndex > Math.ceil(this.collection.length/this.itemsPerPage))
+                    return -1;
+
+                else if(pageIndex === Math.ceil(this.collection.length/this.itemsPerPage))
+                    return this.collection.length%this.itemsPerPage;
+
+                else
+                    return this.itemsPerPage;
+            }
+        }
+        */
+
+        /* 
+        function generateHashtag(str)
+        {
+            str = `#${str.split(' ').filter(el => el).map(el => el.split('').map((el, i) => i === 0 ? el.toUpperCase() : el.toLowerCase()).join('')).join('')}`;
+            return str.length > 140 || str.trim().length === 1 ? false : str;
+        } 
+        */
+
+        /*
+        var solution = function(firstArray, secondArray)
+        {
+            let arr = [];
+            for(let i=0; i<firstArray.length; i++) {
+                arr.push(Math.abs(firstArray[i] - secondArray[i]));
+            }
+            let len = arr.length;
+            return arr.map(el => Math.pow(el, 2)).reduce((a,b) => a+b) / len;
+        }
+        */
+
+        /*
+        function alphanumeric(str)
+        {
+            str = str.split('');
+            if(str.length === 0)
+                return false;
+            for(let i=0; i<str.length; i++) {
+                if(str[i]===" " || str[i].match(/[^\d\w]/) || str[i] === "_")
+                    return false;
+            }
+            return true;
+        }
+        */
+
+        /* const reverse = a => 
+        {
+            let reversed = [];
+            for(let i=a.length-1; i>=0; i--) {
+                reversed.push(a[i]);
+                a.pop();
+            }   
+            return reversed;
+        } */
+
+        /*
+        function toCamelCase(str)
+        {
+            if(str.length===0)
+                return '';
+            let firstLetter = 0;
+            if(str[0] === str[0].toLowerCase())
+                firstLetter = 1;
+            str = str.replace(/-/g, "_").split("_").map(el => el.split('').map((el, i) => i === 0 ? el.toUpperCase() : el.toLowerCase()).join('')).join('');
+            return firstLetter === 1 ? str[0].toLowerCase() + str.slice(1) : str;
+        }
+        */
+
+        /*
+        function isPangram(str)
+        {
+            let alpha = 'abcdefghijklmnopqrstuvwxyz'.split('');
+            str = str.toLowerCase();
+            return alpha.every(x => str.includes(x));
+        }
+        */
+
+        /*
+        function longest(s1, s2)
+        {
+            let str = s1.concat(s2).split('').sort();
+            return String.prototype.concat(...new Set(str));
+        }
+        */
+
+        /*
+        var countBits = function(n)
+        {
+            return n.toString(2).split('').filter(el => el === "1").length;
+        }
+        */
+
+        /*
+        function digitalRoot(n)
+        {
+            while(n.toString().length > 1)
+                n = String(n).split('').reduce((a,b) => parseInt(a) + parseInt(b));
+            return n;
+        }
+        */
+
+        /*
+        function persistence(num)
+        {
+            let count = 0;
+            while(String(num).length > 1) {
+                num = String(num).split('').reduce((a,b) => parseInt(a) * parseInt(b));
+                count++;
+            }
+            return count;
+        }
+        */
+
+        /*
+        function order(words)
+        {
+            return words.split(' ').sort((a,b) => a.match(/\d/) - b.match(/\d/)).join(' ');
+        }
+        */
+
+        /*
+        function isPrime(num)
+        {
+            if(num <= 1)
+                return false;
+            let divisors = 0;
+            for(let i=1; i<=num; i++) {
+                if(num%i === 0)
+                    divisors++;
+            }
+            return divisors === 2;
+        }
+        */
+
+        /*
+        function findOutlier(integers)
+        {
+            let even = integers.filter(el => el%2===0);
+            let odd = integers.filter(el => el%2!==0);
+            return even.length === 1 ? Number(even.join('')) : Number(odd.join(''));
+        }
+        */
+
+        /*
+        class PaginationHelper {
+            item;
+            page=0;
+            h=0;
+            constructor(collection, itemsPerPage) {
+                this.collection = collection;
+                this.itemsPerPage = itemsPerPage;
+            }
+
+            itemCount() {
+                return this.collection.length;
+            }
+
+            pageCount() {
+                return Math.ceil(this.collection.length/this.itemsPerPage);
+            }
+
+            pageItemCount(pageIndex) {
+                if(pageIndex > Math.ceil(this.collection.length/this.itemsPerPage) - 1)
+                    return -1;
+                else {
+                    if(pageIndex === Math.ceil(this.collection.length/this.itemsPerPage) - 1)
+                        return this.collection.length % this.itemsPerPage;
+                    else
+                        return this.itemsPerPage;
+                }
+            }
+
+            pageIndex(itemIndex) {
+                if(itemIndex >= this.collection.length || itemIndex < 0)
+                    return -1;
+                //return this.collection.join('').charAt(itemIndex);
+                else {
+                    for(let i=0; i<itemIndex; i++) {
+                        this.h++;
+                        if(this.h === this.itemsPerPage) {
+                            this.h = 0;
+                            this.page++;
+                        }
+                    }
+                }
+                return this.page;
+            }
+        }
+        */
+
+        /*
+        function alphanumeric(str)
+        {
+            str = str.split('');
+            if(str.length===0)
+                return false;
+            for(let i=0; i<str.length; i++) {
+                if(str[i].match(/[^\w\d]|[\s]|_/))
+                    return false;
+            }
+            return true;
+        }
+        */
+
+        /*
+        function toUnderscore(str)
+        {
+            return str.toString().split(/(?=[A-Z])/g).join("_").toLowerCase();
+        }
+        */
+
+        /* 
+        var CaesarCipher = function (shift)
+        {
+            return {
+                encode:function(str)
+                {
+                    let alpha = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxy";
+                    return str.toLowerCase().replace(/[a-z]/gi, letter => alpha[alpha.indexOf(letter) + shift]).toUpperCase();
+                },
+
+                decode:function(str)
+                {
+                    let res = '';
+                    str = str.toUpperCase();
+                    let newCharCode;
+                    for(let i=0; i<str.length; i++) {
+                        if(str.charCodeAt(i) > 90 | str.charCodeAt(i)<65){
+                            res+=str[i];
+                            continue;
+                        }
+                        newCharCode = str.charCodeAt(i) - shift;
+                        if(newCharCode<65){
+                            newCharCode= 65-newCharCode;
+                            newCharCode= 91 - newCharCode;
+                        }
+                        res+=String.fromCharCode(newCharCode);
+                    }
+                    return res;
+                }
+            }
+        }
+        */
+
+        /*
+        String.prototype.camelCase = function() {
+            return this.split(' ').map(el => el.split('').map((el, i) => i === 0 ? el.toUpperCase() : el.toLowerCase()).join('')).join('');
+        }
+        */
+
+        /*
+        function humanReadable(seconds) 
+        {
+            let minutes=0, hours=0;
+            minutes = Math.floor(seconds/60);
+            seconds -= minutes * 60;
+            hours = Math.floor(minutes/60);
+            minutes -= hours * 60;
+            let arr = [hours, minutes, seconds];
+            arr = arr.map(el => String(el));
+            for(let i=0; i<arr.length; i++)
+                if(arr[i].split('').length===1)
+                    arr[i] = `0${arr[i]}`;
+            return `${arr[0]}:${arr[1]}:${arr[2]}`;
+        }
+        */
+
+        /*
+        function luckCheck(ticket)
+        {
+            for(let i=0; i<ticket.length; i++) {
+                if(!ticket[i].match(/[\d]/))
+                    throw new Error("Error");
+            }
+
+            if(ticket.length === 0)
+                throw new Error("Error");
+
+            let firstHalf;
+            let secondHallf;
+            let half = Math.floor(ticket.length/2);
+
+            if(ticket.length %2 !== 0) {
+                firstHalf = ticket.slice(0, half);
+                secondHalf = ticket.slice(half+1, ticket.length);
+            }
+            
+            else {
+                firstHalf = ticket.slice(0, half);
+                secondHalf = ticket.slice(half)
+            }
+            
+            firstHalf = firstHalf.split('').map(el => Number(el)).reduce((a,b) => a+b);
+            secondHalf = secondHalf.split('').map(el => Number(el)).reduce((a,b) => a+b);
+            return firstHalf === secondHalf;
+        }
+        */
+        
+        /*
+        function changer(str)
+        {
+            let alpha = "abcdefghijklmnopqrstuvwxyza";
+            str = str.toLowerCase();
+            str = str.replace(/[A-Z]/gi, letter => alpha[alpha.indexOf(letter) + 1]);
+            return str.split('').map(el => el.match(/[aeiou]/) ? el.toUpperCase() : el.toLowerCase()).join('');
+        }
+        */
+
+        /*
+        const merge = intervals => {
+        if (intervals.length < 2) return intervals;
+        
+        intervals.sort((a, b) => a[0] - b[0]);
+        
+        const result = [];
+        let previous = intervals[0];
+        
+        for (let i = 1; i < intervals.length; i += 1) {
+            if (previous[1] >= intervals[i][0]) {
+            previous = [previous[0], Math.max(previous[1], intervals[i][1])];
+            } else {
+            result.push(previous);
+            previous = intervals[i];
+            }
+        }
+        
+        result.push(previous);
+        
+        return result;
+        };
+
+        function sumIntervals(intervals)
+        {
+            intervals = merge(intervals);
+            for(let i=0; i<intervals.length; i++) {
+                intervals[i] = intervals[i].reduce((a,b) => b-a);
+            }
+            return intervals.reduce((a,b) => a+b);
+        }
+        */
+
+        /*
+        function solution(string)
+        {
+            return string.split(/(?=[A-Z])/g).join(' ');
+        }
+        */
+
+        /*
+        sortme = function(names)
+        {
+            return names.sort(function (a,b) {
+                    if(a.toLowerCase() < b.toLowerCase()) 
+                        return -1; 
+                    if(a.toLowerCase() > b.toLowerCase())  
+                        return 1;
+                });
+        }
+        */
+
+        /*
+        const toUnderScore = name => {
+            return name.split(/([0-9]+|(?=[A-Z]))/g).filter(el => el).join("_").replace(/_+/gi, "_");
+        }
+        */
+
+        
+    </script>  
+</body>
+</html>
