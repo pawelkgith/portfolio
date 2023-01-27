@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .disclaimer {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <input type="textbox" class="abc" disabled="disabled">
+  <input type="textbox" class="disclaimer">
+  <br>
+  <input type="button" class="start">
+  <p class="timer"></p>
+  <script>
+      /* var userAnswer = document.querySelector('.user-answer');
+      window.addEventListener('keypress', myFun);
+
+      function myFun(e) {
+        if(e.keyCode === 32 && (e.target.value == undefined || e.target.value == "")) {
+          e.preventDefault();
+          userAnswer.focus();
+        }
+      } */
+
+      /* document.addEventListener("keyup", event => {
+        if(event.code === "Space")
+        document.querySelector(".abc").setAttribute("value", "");
+      }); */
+
+      /* let arr = [];
+      let h=0;
+      document.querySelector(".abc").onchange = () => {
+        if(document.querySelector(".abc").value.includes(" "))
+        {
+          arr.push(document.querySelector(".abc").value);
+          document.querySelector(".abc").value = "";
+          arr[h] = arr[h].replace(/ /g, '')
+          h++;
+        }
+      }
+
+      setTimeout(function () {
+        console.log(arr);;
+      }, 10000) */
+
+      /* let arr = [];
+      let h=0;
+      document.querySelector(".abc").onchange = () => {
+        document.querySelector(".abc").addEventListener("keyup", event => {
+          if(event.code === 'Space') {
+            arr.push(document.querySelector(".abc").value);
+            document.querySelector(".abc").value = "";
+            arr[h] = arr[h].replace(/ /g, '');
+            h++;
+          }
+        });
+      }
+
+      setTimeout(function () {
+        arr = arr.filter(el => el);
+        console.log(arr);;
+      }, 10000);  */
+
+      /* 
+
+      //CLOSEST VERSION:
+
+      let arr = [];
+      let input = document.querySelector(".abc");
+      let h = 0;
+
+      input.onchange = (e) => {
+        event.preventDefault();
+        document.querySelector(".disclaimer").focus();
+        input.value = '';
+        input.focus();
+        input.addEventListener('keypress', event => {
+          if(event.code === 'Space') {
+            arr.push(input.value);
+            input.value = "";
+            arr[h] = arr[h].replace(/ /g, '');
+            h++;
+          }
+        });
+      }
+
+      setTimeout(function() {
+        arr = arr.filter(el => el);
+        console.log(arr);
+      }, 10000); 
+      */
+
+      let arr = [];
+      let input = document.querySelector(".abc");
+      let h = 0;
+      let timer = 30;
+
+      input.onchange = (e) => {
+        e.preventDefault();
+        document.querySelector(".disclaimer").focus();
+        input.value = '';
+        input.focus();
+        input.addEventListener('keypress', event => {
+          if(event.code === 'Space') {
+            arr.push(input.value);
+            input.value = "";
+            arr[h] = arr[h].replace(/ /g, '');
+            h++;
+          }
+        });
+      }
+
+      document.querySelector(".start").onclick = () => {
+        input.removeAttribute("disabled");
+        document.querySelector(".timer").innerText = `00:${timer}`;
+        document.querySelector(".start").disabled = true;
+        let a = setInterval(() => {
+          if(timer >= 10) {
+            document.querySelector(".timer").innerText = `00:${timer}`;
+          }
+          else if (timer<10) {
+            document.querySelector(".timer").innerText = `00:0${timer}`;
+          }
+          timer--;
+          if(timer <= -1)
+            clearInterval(a);
+        }, 1000);
+        setTimeout(function() {
+          arr = arr.filter(el => el);
+          console.log(arr);
+        }, 30000); 
+      }
+  </script>
+</body>
+</html>
