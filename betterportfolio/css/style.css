@@ -399,7 +399,7 @@ body {
 .expandedInfo .exHeader .exCap2 {
   left: 37%;
 }
-.expandedInfo:hover {
+.exHeader:hover {
   cursor: pointer;
 }
 .expandedInfo .exCap1, .expandedInfo .exCap2 {
