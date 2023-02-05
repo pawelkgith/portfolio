@@ -221,8 +221,6 @@ table {
 
 input[type=search] {
   -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
 input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
@@ -247,11 +245,12 @@ body {
 
 .container {
   width: 100%;
-  height: 100%;
+  height: auto;
   margin: 0;
 }
 
 .banner {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   width: 100%;
@@ -389,6 +388,9 @@ body {
   font-family: "Leelawadee UI Semilight";
   font-size: 28px;
 }
+.expandedInfo .exHeader:hover {
+  cursor: pointer;
+}
 .expandedInfo .exHeader p {
   position: absolute;
   margin: 0;
@@ -398,9 +400,6 @@ body {
 }
 .expandedInfo .exHeader .exCap2 {
   left: 37%;
-}
-.exHeader:hover {
-  cursor: pointer;
 }
 .expandedInfo .exCap1, .expandedInfo .exCap2 {
   position: absolute;
@@ -520,6 +519,4 @@ footer p {
   color: #8d8d8d;
   left: 80%;
   top: 50%;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
