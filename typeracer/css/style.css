@@ -1,0 +1,355 @@
+@charset "UTF-8";
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden], template {
+  display: none;
+}
+
+html {
+  background: #fff;
+  color: #000;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  background: transparent;
+}
+a:focus {
+  outline: thin dotted;
+}
+a:hover, a:active {
+  outline: 0;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0;
+}
+
+h3 {
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
+h4 {
+  font-size: 1em;
+  margin: 1.33em 0;
+}
+
+h5 {
+  font-size: 0.83em;
+  margin: 1.67em 0;
+}
+
+h6 {
+  font-size: 0.75em;
+  margin: 2.33em 0;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+q {
+  quotes: "“" "”" "‘" "’";
+}
+
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+figure {
+  margin: 0;
+}
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+  border: 0;
+  padding: 0;
+  white-space: normal;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+}
+
+button, input {
+  line-height: normal;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+html input[type=button],
+input[type=reset],
+input[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input[type=search] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+input[type=checkbox], input[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: #66B2FF;
+}
+
+.banner {
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  width: 100%;
+  height: 80px;
+  background-color: rgb(51, 153, 255);
+}
+.banner p {
+  position: absolute;
+  color: white;
+  font-size: 28px;
+  font-family: "DM-Sans";
+}
+.banner .caption {
+  font-size: 40px;
+  font-family: "Leelawadee UI Semilight";
+  top: -30%;
+  left: 10%;
+  letter-spacing: 3px;
+}
+.banner .caption:hover {
+  cursor: pointer;
+}
+.banner .wpm {
+  left: 75%;
+}
+.banner .hour {
+  left: 85%;
+}
+
+.wrapper {
+  position: relative;
+  margin: 0 auto;
+  width: 1220px;
+  height: 100%;
+}
+.wrapper .timer {
+  position: absolute;
+  margin: 0;
+  left: 45%;
+  top: 12%;
+  font-size: 40px;
+  color: white;
+}
+.wrapper .randomWords {
+  position: absolute;
+  left: 12.5%;
+  top: 20%;
+  width: 75%;
+  height: 45%;
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  border: 5px solid rgb(51, 153, 255);
+}
+.wrapper .randomWords__words {
+  margin: 30px 30px 30px 30px;
+  font-family: "DM-Sans";
+  font-size: 24px;
+  color: #202020;
+}
+.wrapper .wordsInput {
+  position: absolute;
+  width: 75%;
+  height: 70px;
+  top: 70%;
+  left: 12.5%;
+}
+.wrapper .wordsInput__field {
+  width: 98%;
+  height: 100%;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  border: none;
+  padding-left: 2%;
+  font-size: 20px;
+  font-family: "Leelawadee UI Semilight";
+}
+.wrapper .wordsInput__field:focus {
+  outline: none;
+}
+.wrapper .buttons {
+  position: absolute;
+  width: 50%;
+  height: 80px;
+  top: 85%;
+  left: 35%;
+}
+.wrapper .buttons .start, .wrapper .buttons .reset {
+  margin-right: 50px;
+  border: none;
+  border-radius: 15px;
+  width: 150px;
+  height: 50px;
+  background-color: #1F6BEC;
+  color: white;
+  font-size: 20px;
+  font-family: "Leelawadee UI Semilight";
+  transition: opacity 0.1s;
+  transition: box-shadow 0.3s;
+}
+.wrapper .buttons .start:hover, .wrapper .buttons .reset:hover {
+  box-shadow: 10px 5px 10px 10px rgba(255, 255, 255, 0.2);
+}
+.wrapper .buttons .start:active, .wrapper .buttons .reset:active {
+  opacity: 0.8;
+}
+
+/*# sourceMappingURL=style.css.map */
