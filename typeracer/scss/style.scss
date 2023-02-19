@@ -1,0 +1,219 @@
+@import "./colors.scss";
+@import "./fonts.scss";
+@import "./normalize.scss";
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background-color: $verylightblue;
+}
+
+.banner {
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    width: 100%;
+    height: 80px;
+    background-color: $lightblue;
+
+    p {
+        position: absolute;
+        color: white;
+        font-size: $s3;
+        font-family: $f2;
+    }
+
+    .caption {
+        font-size: $s4;
+        font-family: $f1;
+        top: -30%;
+        left: 10%;
+        letter-spacing: 3px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .wpm {
+        left: 75%;
+    }
+
+    .hour {
+        left: 85%;
+    }
+}
+
+.wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 1220px;
+    height: 100%;
+
+    .timer {
+        position: absolute;
+        margin: 0;
+        left: 45%;
+        top: 12%;
+        font-size: $s4;
+        color: white;
+    }
+    
+    .randomWords {
+        position: absolute;
+        left: 12.5%;
+        top: 20%;
+        width: 75%;
+        height: 45%;
+        background-color: $white;
+        border-radius: 15px;
+        border: 5px solid $lightblue;
+
+        &__words {
+            margin: 30px 30px 30px 30px;
+            font-family: $f2;
+            font-size: $sWords;
+            color: $black;
+        }
+    }
+
+    .wordsInput {
+        position: absolute;
+        width: 75%;
+        height: 70px;
+        top: 70%;
+        left: 12.5%;
+
+        &__field {
+            width: 98%;
+            height: 100%;
+            background-color: $white;
+            border-radius: 20px;
+            border: none;
+            padding-left: 2%;
+            font-size: $s2;
+            font-family: $f1;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    .buttons {
+        position: absolute;
+        width: 50%;
+        height: 80px;
+        top: 85%;
+        left: 28%;
+
+        .start, .reset, .languageBtn {
+            margin-right: 30px;
+            border: none;
+            border-radius: 15px;
+            width: 150px;
+            height: 50px;
+            background-color: $blue;
+            color: white;
+            font-size: $s2;
+            font-family: $f1;
+            transition: opacity 0.1s;
+            transition: box-shadow 0.3s;
+
+            &:hover {
+                box-shadow: 10px 5px 10px 10px rgba(255, 255, 255, 0.2);
+            }
+
+            &:active  {
+                opacity: 0.8;
+            }
+        }
+    }
+
+    .language {
+        display: none;
+        width: 50%;
+        height: 30%;
+        position: absolute;
+        left: 25%;
+        top: 30%;
+
+        &__header {
+            background: $blue;
+            width: 100%;
+            height: 20%;
+            border-radius: 15px 15px 0 0;
+
+            h2 {
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%);
+                color: white;
+                font-family: $f2;
+                font-size: $s3;
+                top: -3%;
+            }
+
+            .close {
+                position: absolute;
+                font-size: $s3;
+                left: 95%;
+                top: -8%;
+                color: red;
+                transition: 0.2s;
+
+                &:hover {
+                    cursor: pointer;
+                    color: rgb(200, 0, 0);
+                }
+            }
+        }
+
+        &__body {
+            position: relative;
+            width: 100%;
+            height: 80%;
+            background-color: $lightblue;
+            border-radius: 0 0 15px 15px;
+
+            .english, .polish, .extreme {
+                position: absolute;
+                width: 40%;
+                height: 20%;
+                background-color: $verylightblue;
+                border: none;
+                left: 50%;
+                transform: translate(-50%);
+                color: $white;
+                font-size: $s2;
+                font-family: $f2;
+                transition: 0.2s;
+
+                &:hover {
+                    box-shadow: 5px 5px 2px rgba(255, 255, 255, 0.1);
+                }
+
+                &:active {
+                    opacity: 0.7;
+                }
+            }
+
+            .english {
+                top: 10%;
+            }
+
+            .polish {
+                top: 40%;
+            }
+
+            .extreme {
+                top: 70%;
+            }
+        }
+    }
+}
