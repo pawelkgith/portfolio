@@ -1,0 +1,661 @@
+@import './colors.scss';
+@import './fonts.scss';
+@import './normalize.scss';
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+  
+  ::-webkit-scrollbar-track {
+    background: $verydark;
+}
+  
+  ::-webkit-scrollbar-thumb {
+    background: $yellow;
+    border-radius: 10px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0.1;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: $f1;
+    color: white;
+    animation: fadeIn 0.5s;
+    transition: 0.2s;
+}
+
+.banner {
+    width: 100%;
+    height: 150px;
+    background-image: url('../img/navbackground2.png');
+    background-size: cover;
+
+    img {
+        width: 70px;
+        padding: 5px 0 0 5px;
+    }
+
+    .navButtonsDiv {
+        width: 80%;
+        height: 50px;
+        float: right;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0px 10px 0;
+        
+        .navBtn {
+            color: $lightgray;
+            text-decoration: none;
+            font-size: $s2;
+            margin: 0 5px 0 5px;
+        }
+
+        .contactBtn {
+            background-color: $yellow;
+            color: $charcoal;
+            border: 2px solid $charcoal;
+            border-radius: 15px;
+            width: 90px;
+            height: 50px;
+            font-size: $s2;
+
+            &:active {
+                opacity: 0.4;
+            }
+        }
+    }
+}
+
+.container {
+    background-color: $charcoal;
+
+    .wrapper {
+        width: 85%;
+        margin: 0 auto;
+        height: 300px;
+        padding-top: 100px;
+
+        .contactPopUp {
+            display: none;
+            width: 45%;
+            float: right;
+
+            &-header {
+                position: relative;
+                background-color: $yellow;
+                border-radius: 5px 5px 0 0;
+
+                h2 {
+                    margin: 0;
+                    font-size: $s2;
+                    font-family: $f2;
+                    color: $charcoal;
+                    text-align: center;
+                }
+
+                p {
+                    position: absolute;
+                    right: 1%;
+                    top: 1%;
+                    font-size: $s1;
+                    font-family: $f3;
+                    color: red;
+                }
+            }
+
+            &-body {
+                padding: 5px;
+                font-size: $s1;
+                background-color: $lightdark;
+                border-radius: 0 0 5px 5px;
+
+                p {
+                    font-family: $f3;
+                    text-align: center;
+                }
+
+                h3 {
+                    font-size: $s1;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .info {
+            width: 50%;
+            float: left;
+
+            &-name {
+                h1 {
+                    margin: 0;
+                    letter-spacing: 5px;
+                    font-family: $f3;
+                }
+            }
+
+            &-specialization {
+                letter-spacing: 2px;
+                font-family: $f2;
+            }
+
+            &-about {
+                font-size: $s1;
+                line-height: 15px;
+            }
+        }
+    }
+
+    .expandedSections {
+        .learningMap {
+            width: 100%;
+
+            .header {
+                background-color: $yellow;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h2 {
+                    color: $charcoal;
+                    margin: 0;
+                    font-size: $s3;
+                    font-family: $f3;
+                }
+            }
+
+            &-body {
+                display: none;
+                align-items: center;
+                font-size: $s3;
+                flex-wrap: wrap;
+                justify-content: center;
+                background-color: $darkyellow;
+                height: 100px;
+
+                img {
+                    width: 40px;
+                }
+                
+            }
+        }
+
+        .about {
+            width: 100%;
+
+            .header {
+                background-color: $yellow;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h2 {
+                    color: $charcoal;
+                    margin: 0;
+                    font-size: $s3;
+                    font-family: $f3;
+                }
+            }
+
+            &-body {
+                display: none;
+                align-items: center;
+                font-size: $s3;
+                flex-wrap: wrap;
+                justify-content: center;
+                background-color: $darkyellow;
+                height: 150px;
+
+                p {
+                    font-size: 1.2rem;
+                    margin: 0;
+                    padding: 5px;
+                    font-family: $f3;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .reveal {
+        position: relative;
+        opacity: 0;
+    }
+      
+    .reveal.active {
+        opacity: 1;
+    }
+
+    .active.fade-left {
+        animation: fade-left 0.7s ease-in;
+    }
+      
+    @keyframes fade-left {
+        0% {
+          transform: translateX(-100px);
+          opacity: 0;
+        }
+        
+        100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+    }
+
+    .projects {
+        width: 100%;
+        height: 500px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        .project {
+            margin: 5%;
+            width: 35%;
+            height: 175px;
+            padding: 5px;
+
+            h3 {
+                text-align: center;
+                margin: 0;
+                background-color: $yellow;
+                color: $charcoal;
+                border-radius: 10px 10px 0 0;
+                padding: 5px 0 5px 0;
+            }
+
+            &-body {
+                background-color: $verydark;
+                padding: 5px;
+                border-radius: 0 0 5px 5px;
+
+                img {
+                    width: 100%;
+                }
+
+                p {
+                    width: 100%;
+                    margin: 0;
+                    font-family: $f3;
+                    text-align: center;
+                }
+
+                h3 {
+                    text-align: center;
+                    font-family: $f2;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) { 
+    .banner {
+        width: 100%;
+        height: 200px;
+    
+        img {
+            width: 125px;
+            padding: 10px 0 0 10px;
+        }
+    
+        .navButtonsDiv {
+            width: 60%;
+            height: 70px;
+            padding: 20px 0px 20px 30px;
+            
+            .navBtn {
+                font-size: $s3;
+                margin: 0 5px 0 5px;
+            }
+    
+            .contactBtn {
+                border: 2px solid $charcoal;
+                border-radius: 15px;
+                width: 110px;
+                height: 50px;
+                font-size: $s3;
+    
+                &:active {
+                    opacity: 0.4;
+                }
+            }
+        }
+    }
+    
+    .container {
+        .wrapper {
+            width: 85%;
+            height: 300px;
+            padding-top: 150px;
+    
+            .contactPopUp {
+                width: 40%;
+    
+                &-header {
+                    border-radius: 5px 5px 0 0;
+    
+                    h2 {
+                        font-size: $s3;
+                    }
+    
+                    p {
+                        font-size: $s2;
+                    }
+                }
+    
+                &-body {
+                    padding: 5px;
+                    font-size: $s2;
+                    border-radius: 0 0 5px 5px;
+    
+                    h3 {
+                        font-size: $s2;
+                    }
+                }
+            }
+    
+            .info {
+                width: 59%;
+                margin-right: 5px;
+    
+                &-name {
+                    h1 {
+                        letter-spacing: 5px;
+                        font-size: $s3;
+                    }
+                }
+    
+                &-specialization {
+                    letter-spacing: 2px;
+                    font-family: $f2;
+                    font-size: 1.2rem;
+                }
+    
+                &-about {
+                    font-size: $s2;
+                    line-height: 15px;
+                }
+            }
+        }
+    
+        .expandedSections {
+            .learningMap {
+                .header {
+                    height: 70px;
+    
+                    h2 {
+                        font-size: $s4;
+                    }
+                }
+    
+                &-body {
+                    font-size: $s4;
+                    height: 200px;
+    
+                    img {
+                        width: 60px;
+                    }
+                    
+                }
+            }
+    
+            .about {
+                .header {
+                    height: 70px;
+    
+                    h2 {
+                        font-size: $s4;
+                    }
+                }
+    
+                &-body {
+                    font-size: $s4;
+                    height: 200px;
+    
+                    p {
+                        font-size: 1.2rem;
+                        padding: 5px;
+                        font-size: $s2;
+                    }
+                }
+            }
+        }
+
+        .projects {
+            width: 100%;
+            height: 650px;
+            
+            .project {
+                margin: 5%;
+                width: 35%;
+                height: 225px;
+                padding: 5px;
+    
+                h3 {
+                    border-radius: 10px 10px 0 0;
+                    padding: 5px 0 5px 0;
+                    font-size: $s3;
+                }
+    
+                &-body {
+                    padding: 5px;
+                    border-radius: 0 0 5px 5px;
+    
+                    p {
+                        font-size: $s2;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .banner {
+        width: 100%;
+        height: 300px;
+        
+        img {
+            width: 150px;
+            padding: 20px 0 0 50px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .navButtonsDiv {
+            width: 60%;
+            height: 70px;
+            padding: 30px 0px 30px 50px;
+            
+            .navBtn {
+                font-size: $s4;
+                margin: 0 15px 0 15px;
+
+                &:hover {
+                    color: $charcoal;
+                    background-color: white;
+                    border-radius: 10px;
+                    padding: 10px;
+                }
+            }
+    
+            .contactBtn {
+                border-radius: 15px;
+                width: 150px;
+                height: 50px;
+                font-size: $s4;
+    
+                &:hover {
+                    box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.3);
+                }
+            }
+        }
+    }
+    
+    .container {
+        .wrapper {
+            width: 80%;
+            height: 400px;
+            padding-top: 225px;
+    
+            .contactPopUp {
+                width: 40%;
+    
+                &-header {
+                    border-radius: 10px 10px 0 0;
+    
+                    h2 {
+                        font-size: $s4;
+                    }
+    
+                    p {
+                        font-size: $s4;
+                        color: white;
+
+                        &:hover {
+                            color: red;
+                            cursor: pointer;
+                        }
+                    }
+                }
+    
+                &-body {
+                    padding: 5px;
+                    font-size: $s3;
+                    border-radius: 0 0 5px 5px;
+    
+                    p {
+                        text-align: center;
+                    }
+    
+                    h3 {
+                        font-size: $s3;
+                    }
+                }
+            }
+    
+            .info {
+                width: 49.5%;
+    
+                &-name {
+                    h1 {
+                        letter-spacing: 5px;
+                        font-size: $s7;
+                    }
+                }
+    
+                &-specialization {
+                    letter-spacing: 2px;
+                    font-size: $s3;
+                }
+    
+                &-about {
+                    font-size: $s4;
+                    line-height: 35px;
+                }
+            }
+        }
+    
+        .expandedSections {
+            .learningMap {
+                .header {
+                    height: 100px;
+    
+                    h2 {
+                        font-size: $s5;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+    
+                &-body {
+                    font-size: $s4;
+                    height: 200px;
+    
+                    img {
+                        width: 100px;
+                    }
+                    
+                }
+            }
+    
+            .about {
+                width: 100%;
+    
+                .header {
+                    height: 100px;
+    
+                    h2 {
+                        color: $charcoal;
+                        margin: 0;
+                        font-size: $s5;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+    
+                &-body {
+                    display: none;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    background-color: $darkyellow;
+                    height: 250px;
+    
+                    p {
+                        font-size: 1.2rem;
+                        padding: 5px;
+                        font-size: $s4;
+                    }
+                }
+            }
+        }
+
+        .projects {
+            width: 100%;
+            height: 1450px;
+    
+            .project {
+                margin: 5%;
+                width: 35%;
+                height: 250px;
+                padding: 10px;
+
+                h3 {
+                    border-radius: 10px 10px 0 0;
+                    padding: 5px 0 5px 0;
+                    font-size: $s4;
+                }
+    
+                &-body {
+                    padding: 10px;
+                    border-radius: 0 0 10px 10px;
+    
+                    p {
+                        font-size: $s4;
+                    }
+                }
+            }
+        }
+    }
+}
