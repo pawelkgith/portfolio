@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type racer</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <section id="container">
+        <div id="banner">
+            <h1 id="caption">Type Racer</h1>
+            <div id="details">
+                <p id="wpm">0 WPM</p>
+                <p id="hour">18:00</p>
+            </div>
+        </div>
+        <div id="wrapper">
+            <p id="timer">00:30</p>
+            <div id="randomWords">
+                <p id="randomWords__words"></p>
+            </div>
+
+            <div id="wordsInput">
+                <input type="text" id="wordsInput__field" disabled="disabled" placeholder="Press start button to start">
+            </div>
+
+            <div id="buttons">
+                <input type="button" class="btn" id="startBtn" value="START">
+                <input type="button" class="btn" id="resetBtn" value="RESET">
+                <input type="button" class="btn" id="languageBtn" value="LANGUAGE">
+            </div>
+            <div id="language">
+                <div id="language__header">
+                    <h2>Choose language</h2>
+                    <p id="close">X</p>
+                </div>
+                <div id="language__body">
+                    <button id="english" class="languageBtn">English</button>
+                    <button id="polish" class="languageBtn">Polski</button>
+                    <button id="extreme" class="languageBtn">Extreme</button>
+                </div>
+            </div>
+            <div id="submit">
+                <div id="submit__header">
+                    <h2>Typing test results</h2>
+                </div>
+                <div id="submit__body">
+                    <p id="submit__wpmResult" class="submitText">90WPM</p>
+                    <p id="submit__keystrokesResult" class="submitText">190 keystrokes</p>
+                    <p id="submit__validWords" class="submitText">43</p>
+                    <p id="submit__unvalidWords" class="submitText">3</p>
+                    <input type="button" class="resetBtn" id="resetBtn" value="RESET">
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./scripts/tsScript.js"></script>
+</body>
+</html>
