@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Builder</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <section id="container">
+        <div id="banner">
+            <h1>Email builder</h1>
+        </div>
+        <div id="wrapper">
+            <div id="builder">
+                <div id="recipent">
+                    <label for="recipent" id="recipent__cap">To:</label>
+                    <input type="text" id="recipent__input" name="recipent" placeholder="E-mail recipent">
+                </div>
+                <div id="subject">
+                    <label for="subject" id="subject__cap">Subject:</label>
+                    <input type="text" id="subject__input" name="subject" placeholder="E-mail subject">
+                </div>
+                <div id="body">
+                    <div id="body__recipents">
+                        <input type="button" id="recipent2" class="recipents" value="Dear Mrs,">
+                        <input type="button" id="recipent3" class="recipents" value="Dear Sir,">
+                        <input type="button" id="recipent1" class="recipents" value="Dear Mr,">
+                        <input type="button" id="recipent4" class="recipents" value="Hello,">
+                        <input type="button" id="recipent5" class="recipents" value="Greetings,">
+                    </div>
+                    <div id="body__examples">
+                        <input type="button" id="example1" class="examples" value="I am writing to thank you">
+                        <input type="button" id="example2" class="examples" value="I regret to inform you that">
+                        <input type="button" id="example3" class="examples" value="I am writing to you">
+                        <input type="button" id="example4" class="examples" value="I am writing in response">
+                        <input type="button" id="example5" class="examples" value="I would like to say that">
+                        <input type="button" id="example6" class="examples" value="I would like to let you know">
+                        <input type="button" id="example7" class="examples" value="I want to inform you that">
+                        <input type="button" id="example8" class="examples" value="I am writing in reference from">
+
+                    </div>
+                    <label for="body" id="body__cap">Body:</label>
+                    <textarea id="body__input" name="body" placeholder="E-mail body"></textarea>
+                    <div id="body__endings">
+                        <input type="button" id="ending1" class="endings" value="For further information, please contact me">
+                        <input type="button" id="ending2" class="endings" value="I am looking forward for your response">
+                        <input type="button" id="ending3" class="endings" value="In case you have any questions, contact me">
+                        <input type="button" id="ending4" class="endings" value="I hope that">
+                        <input type="button" id="ending5" class="endings" value="Let me know if you have any questions">
+                        <input type="button" id="ending6" class="endings" value="We'll be in touch">
+                        <input type="button" id="ending7" class="endings" value="I want to thank you in advance for your time">
+                        <input type="button" id="ending8" class="endings" value="Thank you in advance">
+                        <input type="button" id="ending9" class="endings" value="Feel free to ask any questions">
+                        <input type="button" id="ending10" class="endings" value="I am in your service">
+                    </div>
+                    <div id="body__greetings">
+                        <input type="button" id="greeting1" class="greetings" value="Greetings, ">
+                        <input type="button" id="greeting2" class="greetings" value="Yours sincerely, "> 
+                        <input type="button" id="greeting3" class="greetings" value="Regards, "> 
+                        <input type="button" id="greeting4" class="greetings" value="Best regards, "> 
+                        <input type="button" id="greeting5" class="greetings" value="Cheers, "> 
+                        <input type="button" id="greeting6" class="greetings" value="Thank you for reading, "> 
+                        <input type="button" id="greeting7" class="greetings" value="Kind regards, ">
+                        <input type="button" id="greeting8" class="greetings" value="Looking forward to meet you, "> 
+                        <input type="button" id="greeting9" class="greetings" value="Looking forward for your response, "> 
+                    </div>
+                </div>
+                <div id="signature">
+                    <label for="name">Signature:</label>
+                    <input type="text" id="signature__input" name="signature" placeholder="Your name">
+                </div>
+            </div>
+            <div id="buttons">
+                <input type="button" id="copy" value="Copy to clipboard">
+                <input type="button" id="reset" value="Reset">
+            </div>
+        </div>
+    </section>
+    <script src="./scripts/script.js"></script>
+</body>
+</html>
