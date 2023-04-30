@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Any time countdown</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id="container">
+        <div id="banner">
+            <h1>Any Time Countdown</h1>
+            <nav>
+                <a href="https://github.com/pawelkgith" target="_blank" id="ghBtn">
+                    <img src="./img/gh.png" alt="Github logo">
+                </a>
+
+                <a href="#">
+                    <img src="./img/question_mark.png" alt="About logo" id="aboutBtn">
+                </a>
+            </nav>
+        </div>
+
+        <div id="wrapper">
+            <div id="aboutPopUp">
+                <div id="aboutPopUp_header">
+                    <h2>What is the website about?</h2>
+                    <p id="closeBtn">X</p>
+                </div>
+                <div id="aboutPopUp_body">
+                    <p>
+                        In this website u can check remaining time 
+                        to specific event such as birthday or any 
+                        other day u want. Just type the date with
+                        the pattern (dd/mm/yyyy) and countdown would 
+                        start. If you want to check other projects 
+                        created by me click GitHub icon on the right
+                        side of banner. Enjoy!
+                    </p>
+                </div>
+            </div>
+
+            <input type="text" id="dateInput" placeholder="Type date here (dd/mm/yyyy)">
+
+            <div id="timeRemaining">
+                <div id="daysDiv" class="timerDiv">
+                    <h2 id="days" class="timers">00</h2>
+                    <p id="daysCap" class="timersCap">DAYS</p>
+                </div>
+
+                <div id="hoursDiv" class="timerDiv">
+                    <h2 id="hours" class="timers">00</h2>
+                    <p id="hoursCap" class="timersCap">HOURS</p>
+                </div>
+
+                <div id="minutesDiv" class="timerDiv">
+                    <h2 id="minutes" class="timers">00</h2>
+                    <p id="minutesCap" class="timersCap">MINUTES</p>
+                </div>
+
+                <div id="secondsDiv" class="timerDiv">
+                    <h2 id="seconds" class="timers">00</h2>
+                    <p id="secondsCap" class="timersCap">SECONDS</p>
+                </div>
+
+                <p id="expectedDate"></p>
+            </div>
+        </div>
+
+        <div id="buttonsDiv">
+            <button id="getDate" class="btn">GET DATE</button>
+            <button id="reset" class="btn">RESET</button>
+        </div>
+    </div>
+
+    <script src="./scripts/countdown.js"></script>
+    <script src="./scripts/popUp.js"></script>
+</body>
+</html>
