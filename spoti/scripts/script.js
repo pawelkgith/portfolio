@@ -64,35 +64,58 @@ addSong("Sicko Mode", "Travis Scott");
 addSong("Teren", "Asster");
 addSong("Took Her To The O", "King Von");
 
+//localStorage.clear();
 const likeBtns = document.querySelectorAll(".likeBtn");
-let isLiked = [];
-for(let i=0; i<document.querySelectorAll(".song").length; i++) {
-    isLiked.push(false);
+if(localStorage.getItem("playlists") === null) {
+    const songs = document.querySelectorAll(".song");
+    let isLiked = [];
+    songs.forEach(() => isLiked.push(false));
+    localStorage.setItem("playlists", JSON.stringify(isLiked));
+
+    likeBtns.forEach((el, i) => {
+        el.addEventListener("click", () => {
+            if(!JSON.parse(localStorage.getItem("playlists"))[i]) {
+                el.style.backgroundImage = "url(../assets/images/liked.png)";
+                let task = JSON.parse(localStorage.getItem("playlists"));
+                task[i] = true;
+                localStorage.setItem("playlists", JSON.stringify(task));
+            }
+
+            else {
+                el.style.backgroundImage = "url(../assets/images/unliked.png)";
+                let task = JSON.parse(localStorage.getItem("playlists"));
+                task[i] = false;
+                localStorage.setItem("playlists", JSON.stringify(task));
+            }
+        });
+    });
 }
 
-// console.log(document.querySelector("#likeBtn0").style.backgroundImage);
-likeBtns.forEach((el, i) => {
-    if(!isLiked[i]) {
-        el.style.backgroundImage = "url(../assets/images/unliked.png)";
-    }
-
-    else {
-        el.style.backgroundImage = "url(../assets/images/liked.png)";
-    }
-    el.addEventListener("click", () => {
-        if(!isLiked[i]) {
-            el.style.backgroundImage = "url(../assets/images/liked.png)";
-            isLiked[i] = true;
-        }
-
-        else {
+else {
+    likeBtns.forEach((el, i) => {
+        if(!JSON.parse(localStorage.getItem("playlists"))[i])
             el.style.backgroundImage = "url(../assets/images/unliked.png)";
-            isLiked[i] = false;
-        }
-    });
-});
+        else
+            el.style.backgroundImage = "url(../assets/images/liked.png)";
 
-//TODO
-//Zapis polubionych piosenek w playliscie do pliku JSON lub plikow lokalnych przegladarki
-//System playlist (JSON)
-//Searchbar
+        el.addEventListener("click", () => {
+            if(!JSON.parse(localStorage.getItem("playlists"))[i]) {
+                el.style.backgroundImage = "url(../assets/images/liked.png)";
+                let task = JSON.parse(localStorage.getItem("playlists"));
+                task[i] = true;
+                localStorage.setItem("playlists", JSON.stringify(task));
+            }
+
+            else {
+                el.style.backgroundImage = "url(../assets/images/unliked.png)";
+                let task = JSON.parse(localStorage.getItem("playlists"));
+                task[i] = false;
+                localStorage.setItem("playlists", JSON.stringify(task));
+            }
+        });
+    });
+}
+
+//Zapis polubionych piosenek w playliscie do pliku JSON w plikach lokalnych przegladarki <-- DONE
+//System playlist (JSON) <-- TODO
+//Searchbar <-- TODO
